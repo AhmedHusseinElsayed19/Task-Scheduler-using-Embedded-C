@@ -1,14 +1,11 @@
-# Task-Scheduler-using-Embedded-C
- Implement a task to toggle an LED and use the parameter to select the color, e.g. by an enum. Use
-it to toggle the green led with a frequency of 0.5 Hz.
- Instead of using timer 1, use the scheduler for debouncing the buttons by calling button_checkState
-as task every 5 ms. Don’t change the library code for the button.
- When pressing the joystick button, turn on the yellow LED. Turn it off when pressing the joystick
-button again or after 5 seconds, whatever comes first.
- Implement a stop watch, which starts and stops when pressing the rotary button. Use the LCD to
-show the current stop watch time in seconds and tenths of seconds. You do not need to implement
-a reset of the stop watch (you may use the reset button for this purpose).
-. Make use of the library created in previous exercises (LCD, LED, and Buttons).
-E Make sure, that the taskDescriptors you use are not local variables, which run out of scope after
-scheduling – this is a sure means of producing undefined behavior!
-E Do not use _delay_ms() (or any other busy waiting) for waiting multiple milliseconds!
+1. Develop a task to control the LED, allowing the choice of its color via a parameter, typically an enum. This task should enable the toggling of the green LED at a frequency of 0.5 Hz.
+
+2. Instead of utilizing timer 1, incorporate the scheduler to manage button debouncing. Achieve this by scheduling the "button_checkState" task to run every 5 milliseconds. It's important not to modify the library code for the button.
+
+3. Implement functionality that, upon pressing the joystick button, activates the yellow LED. The LED should deactivate when the joystick button is pressed again or after a 5-second interval, whichever occurs first.
+
+4. Create a stopwatch feature triggered by pressing the rotary button. Utilize the LCD to display the current stopwatch time in seconds and tenths of seconds. No need to implement a stopwatch reset function; the reset button can handle this purpose.
+
+5. Ensure that the taskDescriptors you employ are not local variables, as this could result in undefined behavior when they go out of scope.
+
+6. Avoid the use of busy waiting functions such as "_delay_ms()" for handling multiple-millisecond delays, as they may lead to inefficient code execution.
